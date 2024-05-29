@@ -89,7 +89,7 @@ namespace openAiAPI
             catch (Exception e)
             { 
                 var message = e.Message;    
-                var errorResponse = message.Contains("prompt triggering") ? message.Substring(0, message.IndexOf("https://go.microsoft.com/fwlink/?linkid=2198766")) : "Något gick fel";
+                var errorResponse = message.Contains("prompt triggering") ? message.Substring(0, message.IndexOf("https://go.microsoft.com/fwlink/?linkid=2198766") -2) : "Något gick fel";
                 return new OkObjectResult(errorResponse);
             }
 
