@@ -86,7 +86,10 @@ namespace openAiAPI
 
                 return new OkObjectResult(responseMessage.Content);
             }
-            catch { return new BadRequestResult(); }
+            catch (Exception e)
+            { 
+                return new OkObjectResult(e.Message);
+            }
 
         }
 
