@@ -78,10 +78,10 @@ namespace openAiAPI
             };
 
 
-            Response<ChatCompletions> response = await _openAIClient.GetChatCompletionsAsync(chatOptions);
 
             try
             {
+                Response<ChatCompletions> response = await _openAIClient.GetChatCompletionsAsync(chatOptions);
                 ChatResponseMessage responseMessage = response.Value.Choices.FirstOrDefault().Message;
 
                 return new OkObjectResult(responseMessage.Content);
